@@ -18,6 +18,8 @@
 <div class="login-box">
     <div class="login-logo">
         <strong><b>Dream Library</b></strong>
+        <br>
+        <i class="fas fa-book-open fa-2x"></i>
     </div>
     <!-- /.login-logo -->
     <div class="card">
@@ -44,7 +46,7 @@
                 <div class="mb-3">
                     <div class="input-group @error('password') is-invalid @enderror ">
                         <input type="password" name="password" class="form-control @error('password') is-invalid @enderror " placeholder="Mật khẩu">
-                        <div class="input-group-append">
+                        <div class="input-group-append" id="toggle-password">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
                             </div>
@@ -102,6 +104,20 @@
         $(this).removeClass( 'is-invalid' );
         $(this).parent().removeClass( 'is-invalid' );
     });
+
+    $("#toggle-password").on("click", function () {
+        const input = $(this).parent().children("input")
+        const icon = $(this).children().children();
+        if (icon.hasClass("fa-lock")){
+            icon.removeClass("fa-lock");
+            icon.addClass("fa-lock-open");
+            input.attr("type", "text");
+        } else {
+            icon.removeClass("fa-lock-open");
+            icon.addClass("fa-lock");
+            input.attr("type", "password");
+        }
+    })
 
 </script>
 

@@ -19,3 +19,5 @@ Route::middleware('auth')->get('/', [HomeController::class, 'dashboard'])->name(
 
 Route::get('/login', [AuthController::class, 'pageLogin'])->name('auth.login');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

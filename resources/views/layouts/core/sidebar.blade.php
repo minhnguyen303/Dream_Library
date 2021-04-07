@@ -1,5 +1,5 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar main-sidebar-custom sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <div class="brand-link">
         <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -102,4 +102,8 @@
         <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
+
+    <div class="sidebar-custom">
+        <a href="{{ route('logout') }}" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="top" data-html="true" title="<b class='text-danger'>Đăng xuất</b>"><i class="fas fa-sign-out-alt"></i></a>
+    </div>
 </aside>
